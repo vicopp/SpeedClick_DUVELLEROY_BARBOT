@@ -34,14 +34,15 @@ public class GUIGamePlay extends javax.swing.JFrame {
      * Creates new form GUIGamePlay
      */
     public GUIGamePlay() {
-        //this.buttonList = new ArrayList<>();
+        
         initComponents();
         try{
                 UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
 
         }catch(ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException e) {
             System.err.println("Could not load Windows LAF");
-            System.exit(1);
+            System.exit(1);                                                             
+                                                                                        //problemes affichage pc/mac
         }
         
         setLocationRelativeTo(null);
@@ -67,8 +68,7 @@ public class GUIGamePlay extends javax.swing.JFrame {
                     best_score = score;
                     jLabelBestScore.setText(Integer.toString( best_score));
                 }
-                    
-              //((Timer) (e.getSource())).stop();
+              
             }
           }
         }
@@ -387,9 +387,9 @@ public class GUIGamePlay extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         JOptionPane.showMessageDialog(new JFrame(),
-                "Speed click est un jeu graphique à un joueur chronométré!\n"
+                "Speed click est un jeu graphique à un joueur chronométré !\n"
                         + "L'objectif est de réaliser le score le plus haut.\n" 
-                        + "Il faut cliquer sur un maximum de bouton allumés dans le temps imparti. A la fin de la partie, un scores s'affiche, et on peut recommencer pour essayer de battre son record.",
+                        + "Il faut cliquer sur un maximum de boutons allumés dans le temps imparti. A la fin de la partie, un score s'affiche, et on peut recommencer pour essayer de battre son record.",
                 "SpeedClick - Information",
             JOptionPane.INFORMATION_MESSAGE );
     }//GEN-LAST:event_jButtonInfoActionPerformed
@@ -467,13 +467,12 @@ public class GUIGamePlay extends javax.swing.JFrame {
         score = 0;
         totalSecond = time_game;
         OpponentScore.setText(Integer.toString(totalSecond));
-        PlayerScore.setText(Integer.toString(score));
+        PlayerScore.setText(Integer.toString(score));           
         
     }
     
     private void reset_buttons() {
-        
-        // Reset user interface
+       
         for(int i=0; i<buttons.size(); i++)
         {
                 JButton btn = buttons.get(i);
